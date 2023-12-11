@@ -18,6 +18,7 @@ class bankUser(models.Model):
 
 class transaction(models.Model):
     user    =    models.ForeignKey('bankUser', on_delete=models.CASCADE)
+    sale    =    models.FloatField(null=True)
     details =    models.TextField(null=True)
     amount  =    models.FloatField(null=True)
     date    =    models.DateField(null=True)
