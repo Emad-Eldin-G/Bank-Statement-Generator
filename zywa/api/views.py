@@ -6,7 +6,10 @@ from rest_framework.decorators import api_view
 from django.http import JsonResponse, HttpResponse
 from django.core.mail import send_mail, EmailMessage
 
+import os
+from django.conf import settings
 import json
+from datetime import datetime
 from docxtpl import DocxTemplate
 from .models import transaction
 
@@ -15,19 +18,29 @@ def invoiceGenerator(data):
     date1 = data['date1']
     date2 = data['date2']
 
-    template = DocxTemplate('zywa/api/templates/invoiceTemplate.docx')
+    #Initializing template to be used
+    template = DocxTemplate(os.path.join(settings.BASE_DIR, "api/invoiceTemplate.docx"))
 
-    transactions = transaction.objects.filter(user__email=email, date__range=[date1, date2]).defer('user')
-    transactionsList = list(transactions.values())
+    #Getting transactions from database and turining them into a list
+    transactions = transaction.objects.filter(user__email=email, date__range=[date1, date2])
+    transactionsList = [list(i) for i in transactions.values_list('date', 'details', 'sale', 'amount')]
 
-    template.render({'email': email, 'fromDate': date1, 'toDate': date2, 'invoice_list': transactionsList})
-    template.pdf(f'zywa/api/invoices/{email}-{date1}-{date2}.pdf')
+    total = 0
+    for t in transactionsList:
+        t[0] = t[0].strftime('%d/%m/%Y')
+        total += t[3]
+    #print(transactionsList)
+
+    #Rendering the template with the data fetched from database
+    template.render({'email': email, 'total': total, 'fromDate': date1, 'toDate': date2, 'invoice_list': transactionsList})
+    template.save(os.path.join(settings.BASE_DIR, f'api/invoices/{email}-{date1}-{date2}.docx'))
     return
 
 
 @api_view(['POST'])
 def getPdf(request):
     data = json.loads(request.body)
+    #creation of invoice happens in invoiceGenerator func
     invoiceGenerator(data)
 
     email = EmailMessage('Zywa Invoice', 
@@ -36,10 +49,10 @@ def getPdf(request):
         ["omda.gasser@gmail.com"], 
         )
 
-    email.attach_file(f'zywa/api/invoices/{data["email"]}-{data["date1"]}-{data["date2"]}.pdf', 'application/pdf')
+    #email.attach_file(os.path.join(settings.BASE_DIR, f'api/invoices/{data["email"]}-{data["date1"]}-{data["date2"]}.pdf'), 'application/pdf')
 
     try:
-        email.send()
-        return Response(status=status.HTTP_200_OK)
+        #email.send()
+        return Response("Good")
     except:
-        return Response(status=status.HTTP_400_BAD_REQUEST)
+        return Response("Bad")
