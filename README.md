@@ -38,3 +38,8 @@ This is the combination I used to create and send the bank statement as an email
 <img src="https://github.com/Emad-Eldin-G/Transactions-details/blob/main/email.jpg" width=350>  
 > Note: I attached an image of the email to show how it works, as the GMAIl SMTP client requires password login, and for security reasons I can't have it publicly (everything is better explained in the code comments zywa/api/views.py)
 
+
+### Additional Notes  
+- I used Django Models over a SQlite db instead of a csv files as it better integrates with Django
+- Please download the packages in the requirements.txt file before using
+
