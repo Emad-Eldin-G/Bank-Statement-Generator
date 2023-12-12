@@ -36,7 +36,7 @@ This is the combination I used to create and send the bank statement as an email
 <br>
 <br>
 <img src="https://github.com/Emad-Eldin-G/Transactions-details/blob/main/email.jpg" width=350>  
-> Note: I attached an image of the email to show how it works, as the GMAIl SMTP client requires password login, and for security reasons I can't have it publicly (everything is better explained in the code comments zywa/api/views.py)
+> Note: I attached an image of the email to show how it works, as the GMAIL SMTP client requires password login, and for security reasons I can't have it publicly (everything is better explained in the code comments zywa/api/views.py)
 
 
 ### Additional Notes  
@@ -47,6 +47,6 @@ This is the combination I used to create and send the bank statement as an email
 <br>
 
 ## Authorization and Authentication. 
-- I will using token authentication to ensure that only the corresponding frontend server can contact the backend server
-- I will use 2-factor authentication alongside password to ensure the user is who he/she claims. By setting an automated bot calling service on the cloud that calls the user and gives him a six digit one-time code that he/she can use to login.
-- After the user is logged in, they only have access to their own bank details and transactions. This could be implemented by correct db relations, and having a key that can only decrypt users's corresponding data.
+- I will use token authentication to ensure that only the corresponding frontend server can contact the backend server
+- I will use 2-factor authentication alongside a password to ensure the user is who he/she claims. By setting an automated bot calling service on the cloud that calls the user and gives him a six-digit one-time code that he/she can use to log in.
+- After the user is logged in, they only have access to their bank details and transactions. This could be implemented by correct db relations, and having a key that can only decrypt users's corresponding data.
