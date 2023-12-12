@@ -19,4 +19,10 @@ template.render({'email': email, 'total': total, 'fromDate': date1, 'toDate': da
 ```
 I chose the DocXtpl as its templating style is very similar to the Django Template Language, which I have previous experience with.  
 Here is how the template looks before data rendering:  
-<img src="https://github.com/Emad-Eldin-G/Transactions-details/blob/main/template.png" width=550>
+<img src="https://github.com/Emad-Eldin-G/Transactions-details/blob/main/template.png" width=550>  
+
+
+### Docx2pdf
+> PDF creation/conversion library
+
+Docx2Pdf is a very widely used docx to pdf conversion library, it allowed me to maintain all the template data in the docx and create a perfect pdf document to send in the email. It only has one problem which is that it requires msWord to be installed, meaning that it can only run on Windows and macOS servers currently. However, it is sufficient for the problem at hand.
