@@ -18,4 +18,4 @@ DocXtpl is a Python library that allowed me to create a template for the bank st
 template.render({'email': email, 'total': total, 'fromDate': date1, 'toDate': date2, 'invoice_list': transactionsList})
 ```
 I chose the DocXtpl as its templating style is very similar to the Django Template Language, which I have previous experience with. Here is how the template looks before data rendering:  
-<img src="https://github.com/Emad-Eldin-G/Transactions-details/blob/main/template.png" width=400>
+<img src="https://github.com/Emad-Eldin-G/Transactions-details/blob/main/template.png" width=550>
