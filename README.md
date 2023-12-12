@@ -43,3 +43,6 @@ This is the combination I used to create and send the bank statement as an email
 - I used Django Models over a SQlite db instead of a csv files as it better integrates with Django
 - Please download the packages in the requirements.txt file before using
 
+## Authorization and Authentication. 
+- I will using token authentication to ensure that only the corresponding frontend server can contact the backend server
+- I will use 2-factor authentication alongside password to ensure the user is who he/she claims. By setting an automated bot calling service on the cloud that calls the user and gives him a six digit one-time code that he/she can use to login.
