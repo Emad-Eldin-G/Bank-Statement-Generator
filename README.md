@@ -32,4 +32,6 @@ Docx2Pdf is a very widely used docx to pdf conversion library, it allowed me to 
 ### Gmail SMTP server + Python Email message app  
 > Email client
 
-This is the combination I used to create and send the bank statement as an email. It is not very secure but it works well for this project. I would personally use a third-party email service like MailChimp to send emails, but configuring it and setting it up with an email domain could not be done before the deadline.
+This is the combination I used to create and send the bank statement as an email. It is not very secure but it works well for this project. I would personally use a third-party email service like MailChimp to send emails, but configuring it and setting it up with an email domain could not be done before the deadline.  
+<img src="https://github.com/Emad-Eldin-G/Transactions-details/blob/main/email.jpg" width=350>  
+
