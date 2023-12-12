@@ -27,3 +27,7 @@ Here is how the template looks before data rendering:
 > PDF creation/conversion library
 
 Docx2Pdf is a very widely used docx to pdf conversion library, it allowed me to maintain all the template data in the docx and create a perfect pdf document to send in the email. It only has one problem which is that it requires msWord to be installed, meaning that it can only run on Windows and macOS servers currently. However, it is sufficient for the problem at hand.
+
+
+### Gmail SMTP server + Python Email message app  
+This is the combination I used to create and send the bank statement as an email. It is not very secure but it works well for this project. I would personally use a third-party email service like MailChimp to send emails, but configuring it and setting it up with an email domain could not be done before the deadline.
