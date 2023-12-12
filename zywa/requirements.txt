@@ -1,0 +1,5 @@
+django==4.0.1
+djangorestframework==3.13.1
+markdown==3.3.7
+docxtpl==0.16.7
+docx2pdf==0.1.8 
