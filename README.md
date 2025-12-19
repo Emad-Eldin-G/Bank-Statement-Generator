@@ -57,8 +57,3 @@ Api endpoint: http://127.0.0.1:8000/api/pdf
   
 <br>  
 <br>
-  
-## Authorization and Authentication. 
-- I will use token authentication to ensure that only the corresponding frontend server can contact the backend server
-- I will use 2-factor authentication alongside a password to ensure the user is who he/she claims. By setting an automated bot calling service on the cloud that calls the user and gives him a six-digit one-time code that he/she can use to log in.
-- After the user is logged in, they only have access to their bank details and transactions. This could be implemented by correct db relations, and having a key that can only decrypt users's corresponding data.
