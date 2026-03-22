@@ -41,9 +41,6 @@ This is the combination I used to create and send the bank statement as an email
 <br>
 <br>
 
-## Additional Notes  
-- I used Django Models over a SQlite db instead of a csv files as it better integrates with Django
-- Please download the packages in the requirements.txt file before using
 
 The test data used was dummy transaction for user with email (JohnDoe@gmail.com) for dates (2023-12-01) to (2023-12-7),  
 Api endpoint: http://127.0.0.1:8000/api/pdf  
